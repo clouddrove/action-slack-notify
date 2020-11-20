@@ -32,10 +32,10 @@ jobs:
           TAG_VERSION: 1.2
 
       - name: Slack Notification
-        uses: clouddrove/action-slack-notify
+        uses: ./
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_TERRAFORM }}
           SLACK_MESSAGE: clouddrove.com
           SLACK_ENV: prod
           SLACK_COLOR: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning'
-
+          if: always()
