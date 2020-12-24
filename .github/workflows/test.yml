@@ -1,14 +1,12 @@
 name: 'K8S Deployment'
 on:
   push:
-    
 
 jobs:
   Deployment:
     name: 'Deployment'
     runs-on: ubuntu-latest
     steps:
-      
       - uses: actions/checkout@v2
       - name: Slack Notification
         uses: ./../
