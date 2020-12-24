@@ -86,7 +86,7 @@ func main() {
 				Short: false,
 			},
 		}
-		for _,requiredField := range requiredFields {
+		for _, requiredField := range requiredFields {
 			switch strings.ToLower(requiredField) {
 			case "ref":
 				field := []Field{
@@ -122,7 +122,7 @@ func main() {
 		mainFields := []Field{
 			{
 				Title: "Branch",
-				Value: strings.Split(os.Getenv("GITHUB_REF"),"/")[2],
+				Value: os.Getenv("GITHUB_REF"),
 				Short: true,
 			}, {
 				Title: "Repo",
