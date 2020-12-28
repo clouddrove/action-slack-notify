@@ -9,6 +9,9 @@ jobs:
     steps:
       - name: 'Checkout'
         uses: actions/checkout@master
+      - name: "faile step"
+        run: |
+          echo "this is testing"
 
       - name: Slack Notification
         uses: ./
