@@ -4,10 +4,12 @@ on:
 
 jobs:
   Deployment:
-    name: 'Deployment'
+    name: 'Slack-action'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: 'Checkout'
+        uses: actions/checkout@master
+        
       - name: Slack Notification
         uses: ./../
         env:
