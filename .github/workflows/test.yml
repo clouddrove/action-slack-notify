@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@master
       - name: "faile step"
         run: |
-          echo "this is testing"
+          echoa "this is testing"
 
       - name: Slack Notification
         uses: ./
