@@ -13,7 +13,7 @@ jobs:
       - name: Slack Notification
         uses: ./
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_WEBHOOK: ${{  secrets.SLACK_WEBHOOK_ANSIBLE }}
           SLACK_MESSAGE: clouddrove.com
           SLACK_ENV: prod
           SLACK_COLOR: good
