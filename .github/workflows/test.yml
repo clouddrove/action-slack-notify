@@ -10,7 +10,6 @@ jobs:
       - name: 'Checkout'
         uses: actions/checkout@master
       - name: "faile step"
-        continue-on-error: true
         run: |
           echoa "this is testing"
       - name: Slack Notification
@@ -20,6 +19,7 @@ jobs:
           SLACK_MESSAGE: clouddrove.com
           SLACK_ENV: prod
           SLACK_COLOR: "${{ job.status == 'success' && 'good' || ( job.status == 'failure' && 'danger' || ( job.status == 'cancelled' && 'danger' || 'warning' )) }}"
+        if: always()
 
 
     
