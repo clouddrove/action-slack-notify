@@ -16,5 +16,5 @@ jobs:
           SLACK_WEBHOOK: ${{  secrets.SLACK_WEBHOOK_ANSIBLE }}
           SLACK_MESSAGE: clouddrove.com
           SLACK_ENV: prod
-          SLACK_COLOR: good
+          SLACK_COLOR: warning
 
