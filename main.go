@@ -44,7 +44,12 @@ type Attachment struct {
 	AuthorLink string  `json:"author_link,omitempty"`
 	AuthorIcon string  `json:"author_icon,omitempty"`
 	Footer     string  `json:"footer,omitempty"`
-	FooterIcon string  `json:"footer_icon,omitempty"`
+	FooterIcon string  `js
+	
+	
+	
+	
+	on:"footer_icon,omitempty"`
 	Fields     []Field `json:"fields,omitempty"`
 }
 
