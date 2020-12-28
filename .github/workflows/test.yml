@@ -4,7 +4,7 @@ on:
 
 jobs:
   Deployment:
-    name: 'Slack-action'
+    name: 'Slack'
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout'
@@ -12,12 +12,17 @@ jobs:
       - name: "faile step"
         run: |
           echoa "this is testing"
+  Slack:
+    name: "Slack-action"
+    runs-on: ubuntu-latest
+    steps:
+       - name: Slack Notification
+         uses: ./
+         env:
+           SLACK_WEBHOOK: ${{  secrets.SLACK_WEBHOOK_ANSIBLE }}
+           SLACK_MESSAGE: clouddrove.com
+           SLACK_ENV: prod
+           SLACK_COLOR: "${{ job.status == 'success' && 'good' || ( job.status == 'failure' && 'danger' || ( job.status == 'cancelled' && 'danger' || 'warning' )) }}"
 
-      - name: Slack Notification
-        uses: ./
-        env:
-          SLACK_WEBHOOK: ${{  secrets.SLACK_WEBHOOK_ANSIBLE }}
-          SLACK_MESSAGE: clouddrove.com
-          SLACK_ENV: prod
-          SLACK_COLOR: "${{ job.status == 'success' && 'good' || ( job.status == 'failure' && 'danger' || ( job.status == 'cancelled' && 'danger' || 'warning' )) }}"
 
+    
