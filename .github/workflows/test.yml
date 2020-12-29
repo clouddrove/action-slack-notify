@@ -9,9 +9,9 @@ jobs:
     steps:
       - name: 'Checkout'
         uses: actions/checkout@master
-      - name: "faile step"
+      - name: "sleep step"
         run: |
-          echoa "this is testing"
+          sleep 1m
       - name: Slack Notification
         uses: ./
         env:
